@@ -15,12 +15,12 @@ import java.util.HashMap;
 @RequestMapping("/shopitem")
 public class ShopItemController {
 
-        private final ShopItemService shopItemService;
+    private final ShopItemService shopItemService;
 
-        @Autowired
-        public ShopItemController(ShopItemService shopItemService) {
-            this.shopItemService = shopItemService;
-        }
+    @Autowired
+    public ShopItemController(ShopItemService shopItemService) {
+        this.shopItemService = shopItemService;
+    }
 
     @GetMapping("/")
     public ResponseEntity<Iterable<ShopItem>> getAllItem(){
