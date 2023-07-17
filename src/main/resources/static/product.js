@@ -1,14 +1,14 @@
 const form = document.getElementById("itemForm");
+const itemController = new ItemController();
+const displayItems = async () => {
+  try {
+    const items = await itemController.getItemsFromBackend();
 
-const itemController = new ItemController()
-
-const displayItem = function(){
-
-    let itemArr = itemController.getLocalStorage()
-    
+    const itemRows = document.getElementById("itemRows");
     itemCards.innerHTML = ''
-    itemArr.forEach(item => {
-        let card = document.createElement("div");
+
+    items.forEach(item => {
+      let card = document.createElement("div");
         card.innerHTML = `
         <div class="card">
         <img src="${item.url}" class="card-img-top shop-item-image" alt="Card image">
@@ -23,8 +23,10 @@ const displayItem = function(){
         </div>
       </div>`
         itemCards.append(card)
-    })
-    console.log(itemArr)
-}
+    });
+  } catch (error) {
+    console.error("An error occurred while displaying items:", error);
+  }
+};
 
-displayItem();
+displayItems();

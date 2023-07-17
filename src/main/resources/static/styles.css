@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
+
 * {
   padding: 0;
   margin: 0;
@@ -78,7 +80,7 @@
   background: url(https://res.cloudinary.com/sagacity/image/upload/c_crop,h_3333,w_5000,x_0,y_0/c_limit,dpr_2.625,f_auto,fl_lossy,q_80,w_412/SeptemberShop-courtesy_gb1yug.jpg)no-repeat;
   background-size: cover;
   height: 75vh;
-  background-position: 50% 50%;
+  background-position:50% 50%; 
   width: 100%;
 }
 
@@ -191,6 +193,62 @@
   padding: 20px 0;
   text-align: center;
   margin: 0;
+}
+
+/* Style for the form container */
+.cart-form-container {
+  font-family: "Montserrat", sans-serif;
+  /* display: none; */
+  position: absolute;
+  /* width: 50%; */
+  /* height: 200px; */
+  z-index: 999;
+  background: #f6f5f7;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  overflow: hidden;
+  width: 600px;
+  max-width: 80%;
+  min-height: 200px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 10px;
+}
+
+.advert-space {
+  background-color: #fff;
+  width: 100%;
+  height: 70px;
+}
+
+/* Define the animation */
+@keyframes moveImage {
+  0% { left: 0%; }
+  50% { left: 50%; }
+  100% { left: 0%; }
+}
+
+/* Apply the animation to the container */
+.moving-container {
+  position: relative;
+  animation: moveImage 10s infinite;
+  /* width: 200px; Adjust the width to accommodate the image and text */
+}
+
+/* Style for the image */
+.moving-image {
+  width: 70px;
+}
+
+/* Style for the text */
+.moving-text {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  color: red;
+  font-size: 20px;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 /* cart style */
@@ -331,7 +389,23 @@
   background-color: red !important;
 }
 
-.content-section {
+/* .content-section {
   display: none;
 
+} */
+
+.cart-icon-container {
+  position: relative;
+}
+
+/*Cart item quantity display*/
+#cart-quantity-total {
+  position: absolute;
+  top: -18px; /* Adjust this value as needed */
+  right: 4px; /* Adjust this value as needed */
+  /* background-color: red; */
+  color: black;
+  padding: 5px 10px;
+  border-radius: 50%;
+  font-size: 16px;
 }
